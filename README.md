@@ -16,12 +16,25 @@ To address this gap, our objective is to leverage existing personal narratives a
 
 
 # Data Understanding
+Our data was collected using a data transfer agreement with McGill University and Queen’s University. The data itself is from Erowid’s experience vaults and is subject to their copyright and may only be used with their permission. 
 
+The raw data set contains close to 40k drug reports with 11743 unique drug types. No identifying information was gathered other the metadata including dosage, delivery method, weight of individual, year consumed, and gender.
 
-![violinplot.png]()
-
+Reports themselves averaged between 3k and 5k words.
 
 # Data Preparation
+To prepare our data we performed the following steps:
+**Cleaning:**
+*Dropping of Null and NaN values
+*Dropping non-English reports
+*Dropping reports with less than five words
+*Dropping drugs with a single occurrence
+**Feature Engineering:**
+*Processing the reports into a new column using lemmatization, tokenization, and lowercasing the text
+*Creating a new column to indicate whether or not a report contained multiple drug labels
+*Creating a new report copy for each individual drug listed in a report
+*Cleaning and categorizing drugs into 10 drug categories
+*Doubling reports that were not mixed to add weight to "pure" drug reports
 
 # Data Modeling
 

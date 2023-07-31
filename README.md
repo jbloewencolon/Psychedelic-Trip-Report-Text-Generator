@@ -25,16 +25,16 @@ Reports themselves averaged between 3k and 5k words.
 # Data Preparation
 To prepare our data we performed the following steps:
 **Cleaning:**
-*Dropping of Null and NaN values
-*Dropping non-English reports
-*Dropping reports with less than five words
-*Dropping drugs with a single occurrence
+* Dropping of Null and NaN values
+* Dropping non-English reports
+* Dropping reports with less than five words
+* Dropping drugs with a single occurrence
 **Feature Engineering:**
-*Processing the reports into a new column using lemmatization, tokenization, and lowercasing the text
-*Creating a new column to indicate whether or not a report contained multiple drug labels
-*Creating a new report copy for each individual drug listed in a report
-*Cleaning and categorizing drugs into 10 drug categories
-*Doubling reports that were not mixed to add weight to "pure" drug reports
+* Processing the reports into a new column using lemmatization, tokenization, and lowercasing the text
+* Creating a new column to indicate whether or not a report contained multiple drug labels
+* Creating a new report copy for each individual drug listed in a report
+* Cleaning and categorizing drugs into 10 drug categories
+* Doubling reports that were not mixed to add weight to "pure" drug reports
 
 # Data Modeling
 

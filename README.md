@@ -5,10 +5,10 @@
     
 By Jordan Loewen-Colón August 2023
 
-# The Business Problem
+# Objective
 
 
-# Recommendations:
+# Insights:
 
 
 # Data Understanding
@@ -17,7 +17,7 @@ By Jordan Loewen-Colón August 2023
 ![violinplot.png]()
 
 
-# Step 2: Data Preparation
+# Data Preparation
 
 # Data Modeling
 

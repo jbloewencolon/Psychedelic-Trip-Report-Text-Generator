@@ -1,7 +1,7 @@
 # Psychedelic-Trip-Generator
 ### Analyzing psychedelic trip reports for predictive modeling and harm reduction and creating a trip report generator
 
-![psycedelic_mushroom.png]()
+![tree machine.png](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/trip%20generator%201.png)
     
 By Jordan Loewen-Colón August 2023
 

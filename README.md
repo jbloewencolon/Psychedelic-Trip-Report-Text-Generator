@@ -6,7 +6,7 @@
 By Jordan Loewen-Colón August 2023
 
 # Objective
-In March 2022, researchers from McGill University embarked on a groundbreaking project using descriptions from personal experiences with psychedelic substances to map specific mental states to brain activity. This study laid the foundation for the development of a sophisticated technology tool that might one day predict which areas of the brain should be activated to create particular mental sensations or feelings.
+In March 2022, researchers from McGill University embarked on a [groundbreaking project](https://www.mcgill.ca/neuro/channels/news/largest-ever-psychedelics-study-maps-changes-conscious-awareness-neurotransmitter-systems-338389) using descriptions from personal experiences with psychedelic substances to map specific mental states to brain activity. This study laid the foundation for the development of a sophisticated technology tool that might one day predict which areas of the brain should be activated to create particular mental sensations or feelings.
 
 This research aims to contribute to discovering new medicines by understanding how different drugs can affect the mind. However, a major challenge in this area is the scarcity of firsthand accounts or personal descriptions of these experiences.
 

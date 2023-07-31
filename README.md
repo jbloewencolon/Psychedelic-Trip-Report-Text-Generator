@@ -6,7 +6,11 @@
 By Jordan Loewen-Colón August 2023
 
 # Objective
+In March 2022, researchers from McGill University embarked on a groundbreaking project using descriptions from personal experiences with psychedelic substances to map specific mental states to brain activity. This study laid the foundation for the development of a sophisticated technology tool that might one day predict which areas of the brain should be activated to create particular mental sensations or feelings.
 
+This research aims to contribute to discovering new medicines by understanding how different drugs can affect the mind. However, a major challenge in this area is the scarcity of firsthand accounts or personal descriptions of these experiences.
+
+To address this gap, our objective is to leverage existing personal narratives and use artificial intelligence (AI) to create realistic 'trip reports' categorized by different types of drugs. These AI-generated descriptions will then be used to enhance future research in the exciting and evolving field of psychedelics, potentially leading to innovative therapeutic applications.
 
 # Insights:
 

@@ -69,10 +69,10 @@ Further questions? Contact Jordan Loewen-Colón @ jbloewen@syr.edu
 ## Repository Structure
 
 
-├── [data]() : data used for modeling
-├── [images]() : images used in PPT and README
-├── [draft 1]() : previous files from first draft of project
-├── [SMOTE version.ipynb]() : notebook used to pull from API
-├── [README.md]() : project information and repository structure
+├── [data](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/tree/main/Data) : data used for modeling
+├── [images](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/tree/main/Images) : images used in PPT and README
+├── [sandbox](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/tree/main/Sandbox) : previous files from first draft of project
+├── [generator.ipynb]() : notebook used to create the generator
+├── [README.md](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/README.md) : project information and repository structure
 ├── [presentation.pdf]() : the powerpoint presentation used to present data analysis
 

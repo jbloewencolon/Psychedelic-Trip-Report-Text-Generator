@@ -6,7 +6,7 @@
 By Jordan Loewen-Colón August 2023
 
 # Objective
-In March 2022, researchers from McGill University embarked on a [groundbreaking project](https://www.mcgill.ca/neuro/channels/news/largest-ever-psychedelics-study-maps-changes-conscious-awareness-neurotransmitter-systems-338389) using descriptions from personal experiences with psychedelic substances to map specific mental states to brain activity. This study laid the foundation for developing a sophisticated technology tool that might one day predict which areas of the brain should be activated to create particular mental sensations or feelings.
+In March 2022, researchers from McGill University embarked on a [groundbreaking project](https://www.mcgill.ca/neuro/channels/news/largest-ever-psychedelics-study-maps-changes-conscious-awareness-neurotransmitter-systems-338389) using descriptions from personal experiences with psychedelic substances to map specific mental states to brain activity. This study laid the foundation for developing a sophisticated technology tool that may predict which areas of the brain should be activated to create particular mental sensations or feelings.
 
 This research aims to contribute to **discovering new medicines** by understanding how different drugs can affect the mind. However, a major challenge in this area is the **scarcity** of firsthand accounts or personal descriptions of these experiences.
 
@@ -18,12 +18,12 @@ To address this gap, our objective is to leverage existing personal narratives a
 # Data Understanding
 Our data was collected using a data transfer agreement with McGill University and Queen’s University. The data itself is from Erowid’s experience vaults and is subject to their copyright and may only be used with their permission. 
 
-The raw data set contains close to 40k drug reports with 11743 unique drug types. No identifying information was gathered other the metadata including dosage, delivery method, weight of individual, year consumed, and gender.
+The raw data set contains nearly 40k drug reports with 11743 unique drug types. No identifying information was gathered other than the metadata, including dosage, delivery method, the weight of the individual, year consumed, and gender.
 
 Reports themselves averaged between 3k and 5k words.
 
 # Data Preparation
-To prepare our data we performed the following steps:
+To prepare our data, we performed the following steps:
 
 **Cleaning:**
 * Dropping of Null and NaN values
@@ -39,6 +39,8 @@ To prepare our data we performed the following steps:
 * Doubling reports that were not mixed to add weight to "pure" drug reports
 
 # Data Modeling
+
+Although our goal is to create a psychedelic trip generator, we start by running models like Logistic Regression, RFC, and XGB on the collected trip reports. This serves as an exploratory step in understanding the language patterns and correlations between different drugs and experiences. By analyzing these patterns, we can identify key linguistic features that distinguish various psychedelic experiences. Although these models can't generate new reports, their predictions can inform the design of a more sophisticated trip report generator, such as GPT-2, by providing insights into how specific terms and structures are associated with different drugs. Essentially, these models act as a groundwork to build a more nuanced and informed generative model.
 
 ![confusionmatrix.png]()
 

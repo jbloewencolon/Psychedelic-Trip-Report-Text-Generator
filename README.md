@@ -1,4 +1,4 @@
-# Psychedelic Trip-Report Generator
+ # Psychedelic Trip-Report Generator
 ### Analyzing psychedelic trip reports for predictive modeling and creating a trip report generator
 
 ![tree machine.png](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/trip%20generator%201.png)
@@ -40,39 +40,19 @@ To prepare our data, we performed the following steps:
 
 # Data Modeling
 
-Although our goal is to create a psychedelic trip generator, we start by running models like Logistic Regression, RFC, and XGB on the collected trip reports. This serves as an exploratory step in understanding the language patterns and correlations between different drugs and experiences. By analyzing these patterns, we can identify key linguistic features that distinguish various psychedelic experiences. Although these models can't generate new reports, their predictions can inform the design of a more sophisticated trip report generator, such as GPT-2, by providing insights into how specific terms and structures are associated with different drugs. Essentially, these models act as a groundwork to build a more nuanced and informed generative model.
+Although we aim to create a psychedelic trip generator, we start by running models like Logistic Regression, RFC (Random Forest Classifier), and XGBoost on the collected trip reports. This is an exploratory step in understanding the language patterns and correlations between drugs and experiences. We can identify key linguistic features that distinguish various psychedelic experiences by analyzing these patterns. Although these models can't generate new reports, their predictions can inform the design of a more sophisticated trip report generator, such as GPT-2, by providing insights into how specific terms and structures are associated with different drugs. These models act as a groundwork to build a more nuanced and informed generative model.
 
-![confusionmatrix.png]()
+After running all three models, we decided to move forward with our best RFC model. We chose the RFC over the logistic regression (which scored better) because the RFC is more robust in providing data on what it considers important and the relationships between different features. After tuning its hyperparameters, the model scored a 75 on precision. In simpler terms, if the model says that a report falls into the 'Psychedelic' category, there is a 75% chance that this prediction is correct.
 
-
-![log reg featureimport.png]()
-
-**Model: Logistic Regression**
-
-- accuracy: 0.8763326226012793
-- precision: 0.9723926380368099
-- recall: 0.8661202185792349
-- F1-score: 0.9161849710982659
-
-**Model: RFC**
-
-- accuracy: 0.8571428571428571
-- precision: 0.9746031746031746
-- recall: 0.8387978142076503
-- F1-score: 0.9016152716593245
-
-**Model: GBC**
-
-- accuracy: 0.8528784648187633
-- precision: 0.9684542586750788
-- recall: 0.8387978142076503
-- F1-score: 0.8989751098096632
+![rfcclassification.png](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/RFC%20Classification%20Report.PNG)
 
 # Data Understanding
 
-Interpretations:
+Scores like that on their own don't really tell us much about the story. For example, of the 25% of the time the model guessed wrong, what was it most likely to choose?
 
-![top coefficients.png]()
+![heatmatrix.png](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/heatmatrix.png)
+
+Our model was most likely to confuse a trip report about psychedelics with one about Cannabinoids or Empathogen/Entactogens (and even Entheogens, relative to their small sample size!). This all falls in line with what we would expect, as all three of those other categories, especially Cannabis, often fall under the broader range of 'psychedelic' substances.
 
 ![oscore use.png]()
 

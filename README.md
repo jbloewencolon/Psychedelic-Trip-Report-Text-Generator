@@ -35,7 +35,7 @@ To prepare our data we performed the following steps:
 * Processing the reports into a new column using lemmatization, tokenization, and lowercasing the text
 * Creating a new column to indicate whether or not a report contained multiple drug labels
 * Creating a new report copy for each individual drug listed in a report
-* Cleaning and categorizing drugs into 10 drug categories
+* Cleaning and categorizing drugs into 10 drug categories  [Psychedelic, Pharmaceutical, Cannabinoid, Other, Stimulant, Entactogen/Empathogen, Dissociative, Depressant, Opioid, Entheogen]
 * Doubling reports that were not mixed to add weight to "pure" drug reports
 
 # Data Modeling

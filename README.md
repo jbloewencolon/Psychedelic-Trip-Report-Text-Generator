@@ -15,7 +15,15 @@ To address this gap, our objective is to leverage existing personal narratives a
 
 # Insights:
 
-A company aiming to create a realistic psychedelic trip report generator may consider adopting three strategic approaches: First, capitalizing on the significance of terms like "feeling" and underlying existential or sensory themes, targeted content creation can be employed, with collaboration from experts in the field of psychedelics to ensure the authenticity of trip reports. Second, recognizing the improvements seen with larger data samples, investment in extensive research and data collection across varied psychedelic experiences can be undertaken, along with partnerships with psychedelic research organizations for comprehensive insights. Finally, more visualization and interpretation tools can be leveraged for both internal assessment and client-facing customization. Offering transparency and alignment with genuine psychedelic experiences, this could also be a unique selling point for engaging a wider audience. Together, these strategies, based on understanding key terms, expanding data insights, and leveraging visualization, can pave a pathway for a more nuanced and business-savvy approach to generating authentic psychedelic trip reports.
+From our analysis, the key insights include:
+
+Significance of "Feeling": The word "feeling" was found to have a positive weight in the Random Forest Classifier model, making it likely to classify a report as a psychedelic experience.
+
+Improvement with Larger Data Sample for Psychedelics: Word2Vec improved the precision in predicting Psychedelics with RFC by 11%. More data in other categories could lead to similar enhancements.
+
+Underlying Patterns in Predictions: Visualization revealed differences in positive and negative predictions related to psychedelics, indicative of how the model made its false positives.
+
+We also employed an LDA model to identify underlying themes. Key topics included words with existential themes; physical sensations; encapsulating social aspects; and illustrative visual experiences. The topics for "Psychedelics" and "Pharmaceuticals" were quite different, as expected. The detailed LDA results can be viewed here.
 
 # Data Understanding
 Our data was collected using a data transfer agreement with McGill University and Queen’s University. The data itself is from Erowid’s experience vaults and is subject to their copyright and may only be used with their permission. 
@@ -56,13 +64,23 @@ Scores like that on their own don't really tell us much about the story. For exa
 
 Our model was most likely to confuse a trip report about psychedelics with one about Cannabinoids or Empathogen/Entactogens (and even Entheogens, relative to their small sample size!). This all falls in line with what we would expect, as all three of those other categories, especially Cannabis, often fall under the broader range of 'psychedelic' substances.
 
-![oscore use.png]()
+![word vec clusters.png](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/word%20vec%20clusters.PNG)
 
+![psy word clouds](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/psy%20word%20cloud.PNG)
+
+![pharm word clouds](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/pharm%20word%20cloud.PNG)
+
+![LIME features](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/LIME%20words.PNG)
+
+![LIME analysis](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/LIME%20analysis.PNG)
+
+![prediction patterns](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/true%20and%20false.PNG)
+
+![prediction patterns combined](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/true%20vs%20false.PNG)
 
 # Conclusion
 
-From our data analysis, it's clear that more time and more data would reveal even greater insights on this data set and allow us to train a more accurate GPT-2 model for text generation. That being said, the major insights from our modeling here reveal:
-
+A company aiming to create a realistic psychedelic trip report generator may consider adopting three strategic approaches: First, capitalizing on the significance of terms like "feeling" and underlying existential or sensory themes, targeted content creation can be employed, with collaboration from experts in the field of psychedelics to ensure the authenticity of trip reports. Second, recognizing the improvements seen with larger data samples, investment in extensive research and data collection across varied psychedelic experiences can be undertaken, along with partnerships with psychedelic research organizations for comprehensive insights. Finally, more visualization and interpretation tools can be leveraged for both internal assessment and client-facing customization. Offering transparency and alignment with genuine psychedelic experiences, this could also be a unique selling point for engaging a wider audience. Together, these strategies, based on understanding key terms, expanding data insights, and leveraging visualization, can pave a pathway for a more nuanced and business-savvy approach to generating authentic psychedelic trip reports.
 
 # Next Steps
 
@@ -78,7 +96,8 @@ Further questions? Contact Jordan Loewen-Colón @ jbloewen@syr.edu
 ├── [data](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/tree/main/Data) : data used for modeling
 ├── [images](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/tree/main/Images) : images used in PPT and README
 ├── [sandbox](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/tree/main/Sandbox) : previous files from first draft of project
-├── [generator.ipynb]() : notebook used to create the generator
+├── [generator.ipynb](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Psychedelic_Trip_Generator.ipynb) : notebook used to create the generator
+├── [Hugging Face Space](https://huggingface.co/spaces/Legacy7070/Psychedelic-Trip-Report-Generator) : Hosted space to access the generator U/I
 ├── [README.md](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/README.md) : project information and repository structure
 ├── [presentation.pdf]() : the powerpoint presentation used to present data analysis
 

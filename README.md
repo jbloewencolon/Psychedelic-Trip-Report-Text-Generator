@@ -60,9 +60,12 @@ Our model was most likely to confuse a trip report about psychedelics with one a
 
 # Conclusion
 
+From our data analysis, it's clear that more time and more data would reveal even greater insights on this data set and allow us to train a more accurate GPT-2 model for text generation. That being said, the major insights from our modeling here reveal:
+
 
 # Next Steps
 
+We also employed an LDA model for topic modeling to identify underlying themes, the results of which can be viewed [here](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Sandbox/LDA%20Final.ipynb). We also implemented a [BigBird model](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Sandbox/BigBird.ipynb) to process large data sets, taking advantage of its capabilities to handle extensive reports. Finally, our [GPT-2 Model here](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Sandbox/GPT_2_Text_Generator.ipynb) was trained to generate text, and an application was created, hosted on Hugging Face Spaces, for public access.
 
 # Questions?
 For a full analysis, please check the Jupyter Notebook or slide presentation.

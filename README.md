@@ -91,6 +91,7 @@ Next, we created an explainer using LIME, then chose an instance to explain, and
 Unfortunately, we cannot derive much from the LIME explanation as it seems to indicate that our model gave a lot of weight to stop words in making its predictions. This will require more analysis in the future and perhaps some experiments with removing the stop words even if we lose semantic understanding for our GPT-2 Model later.
 
 Next, we visualized our positive predictions and false predictions.
+
 ![prediction patterns](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/true%20and%20false.PNG)
 
 ![prediction patterns combined](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/true%20vs%20false.PNG)

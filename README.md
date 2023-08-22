@@ -30,7 +30,7 @@ The first draft of the generator can be found at [Hugging Face Spaces](https://h
 # Data Understanding
 Our data was collected using a data transfer agreement with McGill University and Queen’s University. The data is from [Erowid’s experience vaults](https://erowid.org/experiences/) and is subject to their copyright, and *may only be used with their permission*. 
 
-The raw data set contains nearly 40k drug reports with 11743 unique drug types. No identifying information was gathered other than the metadata, including dosage, delivery method, the weight of the individual, year consumed, and gender.
+The raw data set contains nearly 70k drug reports with 11743 unique drug types. No identifying information was gathered other than the metadata, including dosage, delivery method, the weight of the individual, year consumed, and gender.
 
 Reports themselves averaged between 3k and 5k words.
 

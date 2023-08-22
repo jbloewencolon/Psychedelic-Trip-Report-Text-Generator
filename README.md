@@ -23,10 +23,10 @@ Improvement with Larger Data Sample for Psychedelics: Word2Vec improved the prec
 
 Underlying Patterns in Predictions: Visualization revealed differences in positive and negative predictions related to psychedelics, indicative of how the model made its false positives.
 
-We also employed an LDA model to identify underlying themes. Key topics included words with existential themes; physical sensations; encapsulating social aspects; and illustrative visual experiences. The topics for "Psychedelics" and "Pharmaceuticals" were quite different, as expected. The detailed LDA results can be viewed here.
+We also employed an LDA model to identify underlying themes. Key topics included words with existential themes; physical sensations; encapsulating social aspects; and illustrative visual experiences. The topics for "Psychedelics" and "Pharmaceuticals" were quite different, as expected. The detailed LDA results can be viewed [here](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Sandbox/LDA%20Final.ipynb).
 
 # Data Understanding
-Our data was collected using a data transfer agreement with McGill University and Queen’s University. The data itself is from Erowid’s experience vaults and is subject to their copyright and may only be used with their permission. 
+Our data was collected using a data transfer agreement with McGill University and Queen’s University. The data is from [Erowid’s experience vaults](https://erowid.org/experiences/) and is subject to their copyright, and may only be used with their permission. 
 
 The raw data set contains nearly 40k drug reports with 11743 unique drug types. No identifying information was gathered other than the metadata, including dosage, delivery method, the weight of the individual, year consumed, and gender.
 
@@ -39,20 +39,20 @@ To prepare our data, we performed the following steps:
 * Dropping of Null and NaN values
 * Dropping non-English reports
 * Dropping reports with less than five words
-* Dropping drugs with a single occurrence
+* Dropping drug reports with a single occurrence
 
 **Feature Engineering:**
 * Processing the reports into a new column using lemmatization, tokenization, and lowercasing the text
 * Creating a new column to indicate whether or not a report contained multiple drug labels
-* Creating a new report copy for each individual drug listed in a report
+* Creating a new report copy for each individual drug listed in a mixed report
 * Cleaning and categorizing drugs into 10 drug categories  [Psychedelic, Pharmaceutical, Cannabinoid, Other, Stimulant, Entactogen/Empathogen, Dissociative, Depressant, Opioid, Entheogen]
 * Doubling reports that were not mixed to add weight to "pure" drug reports
 
 # Data Modeling
 
-Although we aim to create a psychedelic trip generator, we start by running models like Logistic Regression, RFC (Random Forest Classifier), and XGBoost on the collected trip reports. This is an exploratory step in understanding the language patterns and correlations between drugs and experiences. We can identify key linguistic features that distinguish various psychedelic experiences by analyzing these patterns. Although these models can't generate new reports, their predictions can inform the design of a more sophisticated trip report generator, such as GPT-2, by providing insights into how specific terms and structures are associated with different drugs. These models act as a groundwork to build a more nuanced and informed generative model.
+Although we aim to create a psychedelic trip generator, we started by running models like Logistic Regression, RFC (Random Forest Classifier), and XGBoost on the collected trip reports. This is an exploratory step in understanding the language patterns and correlations between drugs and experiences. Analyzing these patterns, we can identify key linguistic features that distinguish various psychedelic experiences. Although these models can't generate new reports, their predictions can inform the design of a more sophisticated trip report generator, such as GPT-2, by providing insights into how specific terms and structures are associated with different drugs. These models act as groundwork to build a more nuanced and informed generative model.
 
-After running all three models, we decided to move forward with our best RFC model. We chose the RFC over the logistic regression (which scored better) because the RFC is more robust in providing data on what it considers important and the relationships between different features. After tuning its hyperparameters, the model scored a 75 on precision. In simpler terms, if the model says that a report falls into the 'Psychedelic' category, there is a 75% chance that this prediction is correct.
+After running all three models, we decided to move forward with our best RFC model. We chose the RFC over the logistic regression (which scored slightly better) because the RFC is more robust in providing data on what it considers important to making its predictions and the relationships between different features. After tuning its hyperparameters, the model scored a 75 on precision. In simpler terms, if the model says that a report falls into the 'Psychedelic' category, there is a 75% chance that this prediction is correct.
 
 ![rfcclassification.png](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/RFC%20Classification%20Report.PNG)
 
@@ -62,7 +62,7 @@ Scores like that on their own don't really tell us much about the story. For exa
 
 ![heatmatrix.png](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/heatmatrix.png)
 
-Our model was most likely to confuse a trip report about psychedelics with one about Cannabinoids or Empathogen/Entactogens (and even Entheogens, relative to their small sample size!). This all falls in line with what we would expect, as all three of those other categories, especially Cannabis, often fall under the broader range of 'psychedelic' substances.
+Our model was most likely to confuse a trip report about psychedelics with one about Cannabinoids or Empathogen/Entactogens (and even Entheogens, relative to their small sample size!). This aligns with what we would expect, as all three other categories, especially Cannabis, often fall under the broader range of 'psychedelic' substances.
 
 ![word vec clusters.png](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/word%20vec%20clusters.PNG)
 

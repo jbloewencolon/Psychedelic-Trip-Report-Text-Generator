@@ -90,11 +90,12 @@ Next, we created an explainer using LIME, then chose an instance to explain, and
 
 Unfortunately, we cannot derive much from the LIME explanation as it seems to indicate that our model gave a lot of weight to stop words in making its predictions. This will require more analysis in the future and perhaps some experiments with removing the stop words even if we lose semantic understanding for our GPT-2 Model later.
 
-Next, we visualized our positive predictions and false predictions. The three plots visualize model predictions related to psychedelics on a 2D plane. Plot 1 shows correct predictions; Plot 2 highlights incorrect ones with red 'x' markers, and Plot 3 contrasts correct (blue) and incorrect (red 'x') predictions. While the model cannot tell exactly what the patterns are that it is following, we can see that there are differences here that the model is picking up on.
-
+Next, we visualized our positive predictions and false predictions.
 ![prediction patterns](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/true%20and%20false.PNG)
 
 ![prediction patterns combined](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/true%20vs%20false.PNG)
+
+The three plots visualize model predictions related to psychedelics on a 2D plane. Plot 1 shows correct predictions; Plot 2 highlights incorrect ones with red 'x' markers, and Plot 3 contrasts correct (blue) and incorrect (red 'x') predictions. While the model cannot tell exactly what the patterns are that it is following, we can see that there are differences here that the model is picking up on. Our next step was then to use a more complex model (BigBird) to find features that could take into account the longer form versions of the reports. That model can be found [here](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Sandbox/BigBird.ipynb).
 
 # Conclusion
 
@@ -102,7 +103,7 @@ A company aiming to create a realistic psychedelic trip report generator may con
 
 # Next Steps
 
-We also employed an LDA model for topic modeling to identify underlying themes, the results of which can be viewed [here](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Sandbox/LDA%20Final.ipynb). We also implemented a [BigBird model](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Sandbox/BigBird.ipynb) to process large data sets, taking advantage of its capabilities to handle extensive reports. Finally, our [GPT-2 Model here](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Sandbox/GPT_2_Text_Generator.ipynb) was trained to generate text, and an application was created, hosted on [Hugging Face Spaces](https://huggingface.co/spaces/Legacy7070/Psychedelic-Trip-Report-Generator), for public access.
+Given the time constraints, our final GPT-2 model is not capable of producing the quality of reports we'd like. Given more time, we'd like to better incorporate the insights from out LDA model which was able to identify underlying themes, the results of which can be viewed [here](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Sandbox/LDA%20Final.ipynb). We also implemented a [BigBird model](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Sandbox/BigBird.ipynb) to process large data sets, taking advantage of its capabilities to handle extensive reports, but did not have time to feed the embedding data into our GPT-2 model. Finally, our [GPT-2 Model here](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Sandbox/GPT_2_Text_Generator.ipynb) was trained to generate text, and an application was created, hosted on [Hugging Face Spaces](https://huggingface.co/spaces/Legacy7070/Psychedelic-Trip-Report-Generator), for public access.
 
 # Questions?
 For a full analysis, please check the Jupyter Notebook or slide presentation.

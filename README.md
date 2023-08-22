@@ -47,12 +47,16 @@ To prepare our data, we performed the following steps:
 * Processing the reports into a new column using lemmatization, tokenization, and lowercasing the text
 * Creating a new column to indicate whether or not a report contained multiple drug labels
 * Creating a new report copy for each individual drug listed in a mixed report
-* Cleaning and categorizing drugs into 10 drug categories  [Psychedelic, Pharmaceutical, Cannabinoid, Other, Stimulant, Entactogen/Empathogen, Dissociative, Depressant, Opioid, Entheogen]
+* Cleaning and categorizing drugs into 10 drug categories: Psychedelic, Pharmaceutical, Cannabinoid, Other, Stimulant, Entactogen/Empathogen, Dissociative, Depressant, Opioid, Entheogen. These categories were drawn from the [Alcohol and Drug Foundation Wheel](https://adf.org.au/drug-facts/#wheel)
 * Doubling reports that were not mixed to add weight to "pure" drug reports
 
 # Data Modeling
 
 Although we aim to create a psychedelic trip generator, we started by running models like Logistic Regression, RFC (Random Forest Classifier), and XGBoost on the collected trip reports. This is an exploratory step in understanding the language patterns and correlations between drugs and experiences. Analyzing these patterns, we can identify key linguistic features that distinguish various psychedelic experiences. Although these models can't generate new reports, their predictions can inform the design of a more sophisticated trip report generator, such as GPT-2, by providing insights into how specific terms and structures are associated with different drugs. These models act as groundwork to build a more nuanced and informed generative model.
+
+**Precision was our metric**, as we wanted a model that is able to reproduce similar reports itself. 
+
+High precision means that when the model predicts a certain drug type, it is more likely to be correct. If there are severe consequences associated with incorrect positive predictions (false positives), such as legal implications, mislabeling, or misguidance in treatment, then precision would be a critical metric.
 
 After running all three models, we decided to move forward with our best RFC model. We chose the RFC over the logistic regression (which scored slightly better) because the RFC is more robust in providing data on what it considers important to making its predictions and the relationships between different features. After tuning its hyperparameters, the model scored a 75 on precision. In simpler terms, if the model says that a report falls into the 'Psychedelic' category, there is a 75% chance that this prediction is correct.
 

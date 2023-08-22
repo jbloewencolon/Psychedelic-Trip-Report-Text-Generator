@@ -17,16 +17,18 @@ To address this gap, our objective is to leverage existing personal narratives a
 
 From our analysis, the key insights include:
 
-Significance of "Feeling": The word "feeling" was found to have a positive weight in the Random Forest Classifier model, making it likely to classify a report as a psychedelic experience.
+**Significance of "Feeling"**: The word "feeling" was found to have a positive weight in the Random Forest Classifier model, making it likely to classify a report as a psychedelic experience.
 
-Improvement with Larger Data Sample for Psychedelics: Word2Vec improved the precision in predicting Psychedelics with RFC by 11%. More data in other categories could lead to similar enhancements.
+**Improvement with Larger Data Sample for Psychedelics**: Word2Vec improved the precision in predicting Psychedelics with RFC by 11%. More data in other categories could lead to similar enhancements.
 
-Underlying Patterns in Predictions: Visualization revealed differences in positive and negative predictions related to psychedelics, indicative of how the model made its false positives.
+**Underlying Patterns in Predictions**: Visualization revealed differences in positive and negative predictions related to psychedelics, indicative of how the model made its false positives.
 
 We also employed an LDA model to identify underlying themes. Key topics included words with existential themes; physical sensations; encapsulating social aspects; and illustrative visual experiences. The topics for "Psychedelics" and "Pharmaceuticals" were quite different, as expected. The detailed LDA results can be viewed [here](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Sandbox/LDA%20Final.ipynb).
 
+The first draft of the generator can be found at [Hugging Face Spaces](https://huggingface.co/spaces/Legacy7070/Psychedelic-Trip-Report-Generator). 
+
 # Data Understanding
-Our data was collected using a data transfer agreement with McGill University and Queen’s University. The data is from [Erowid’s experience vaults](https://erowid.org/experiences/) and is subject to their copyright, and may only be used with their permission. 
+Our data was collected using a data transfer agreement with McGill University and Queen’s University. The data is from [Erowid’s experience vaults](https://erowid.org/experiences/) and is subject to their copyright, and *may only be used with their permission*. 
 
 The raw data set contains nearly 40k drug reports with 11743 unique drug types. No identifying information was gathered other than the metadata, including dosage, delivery method, the weight of the individual, year consumed, and gender.
 
@@ -76,7 +78,7 @@ We clearly have some different clusters here, but it is not clear what they migh
 
 Here we see a clear difference between words in the reports labeled "Psychedelic" and those labeled "Pharmaceutical." It looks like both sets of clusters include the names of the drugs from the label category. That could be something we take into account with future data cleaning and engineering. Nevertheless, it's encouraging that our model was able to find relevant distinctions.
 
-Next, we moved on to trying to understand what features and elements our RFC model found important as it was making its predictions. We used LIME (Local Interpretable Model-agnostic Explanations), a tool that helps explain complex models like RFC. LIME is like a translator that breaks the decisions of the RFC model into simpler terms, showing the main reasons behind the decision. It's like asking a translator, "Why did the committee decide this?" and getting a plain-English answer that highlights the most important factors. With the above visualization, we can see that the word "feeling" was given positive weight when making a prediction, which means that, when that word appeared, it was likelier to be a "Psychedelic" than not.
+Next, we moved on to trying to understand what features and elements our RFC model found important as it was making its predictions. We used LIME (Local Interpretable Model-agnostic Explanations), a tool that helps explain complex models like RFC. LIME is like a translator that breaks the decisions of the RFC model into simpler terms, showing the main reasons behind the decision. It's like asking a translator, "Why did the committee decide this?" and getting a plain-English answer that highlights the most important factors. With the above visualization, we can see that **the word "feeling"** was given positive weight when making a prediction, which means that, when that word appeared, it was likelier to be a "Psychedelic" than not.
 
 ![LIME features](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/LIME%20words.PNG)
 
@@ -100,7 +102,10 @@ The three plots visualize model predictions related to psychedelics on a 2D plan
 
 # Conclusion
 
-A company aiming to create a realistic psychedelic trip report generator may consider adopting three strategic approaches: First, capitalizing on the significance of terms like "feeling" and underlying existential or sensory themes, targeted content creation can be employed, with collaboration from experts in the field of psychedelics to ensure the authenticity of trip reports. Second, recognizing the improvements seen with larger data samples, investment in extensive research and data collection across varied psychedelic experiences can be undertaken, along with partnerships with psychedelic research organizations for comprehensive insights. Finally, more visualization and interpretation tools can be leveraged for both internal assessment and client-facing customization. Offering transparency and alignment with genuine psychedelic experiences, this could also be a unique selling point for engaging a wider audience. Together, these strategies, based on understanding key terms, expanding data insights, and leveraging visualization, can pave a pathway for a more nuanced and business-savvy approach to generating authentic psychedelic trip reports.
+A company aiming to create a realistic psychedelic trip report generator may consider adopting three strategic approaches: 
+- First, capitalizing on the significance of terms like "feeling" and underlying existential or sensory themes, targeted content creation can be employed, with collaboration from experts in the field of psychedelics to ensure the authenticity of trip reports.
+- Second, recognizing the improvements seen with larger data samples, investment in extensive research and data collection across varied psychedelic experiences can be undertaken, along with partnerships with psychedelic research organizations for comprehensive insights.
+- Finally, more visualization and interpretation tools can be leveraged for both internal assessment and client-facing customization. Offering transparency and alignment with genuine psychedelic experiences, this could also be a unique selling point for engaging a wider audience. Together, these strategies, based on understanding key terms, expanding data insights, and leveraging visualization, can pave a pathway for a more nuanced and business-savvy approach to generating authentic psychedelic trip reports.
 
 # Next Steps
 
@@ -116,7 +121,7 @@ Further questions? Contact Jordan Loewen-Colón @ jbloewen@syr.edu
 ├── [data](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/tree/main/Data) : data used for modeling
 ├── [images](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/tree/main/Images) : images used in PPT and README
 ├── [sandbox](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/tree/main/Sandbox) : previous files from first draft of project
-├── [generator.ipynb](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Psychedelic_Trip_Generator.ipynb) : notebook used to create the generator
+├── [GPT-2_generator.ipynb](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Sandbox/Copy_of_GPT_2_Text_Generator.ipynb) : notebook used to create the generator
 ├── [Hugging Face Space](https://huggingface.co/spaces/Legacy7070/Psychedelic-Trip-Report-Generator) : Hosted space to access the generator U/I
 ├── [README.md](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/README.md) : project information and repository structure
 ├── [presentation.pdf]() : the powerpoint presentation used to present data analysis

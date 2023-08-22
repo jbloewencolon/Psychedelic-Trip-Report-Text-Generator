@@ -62,17 +62,35 @@ Scores like that on their own don't really tell us much about the story. For exa
 
 ![heatmatrix.png](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/heatmatrix.png)
 
-Our model was most likely to confuse a trip report about psychedelics with one about Cannabinoids or Empathogen/Entactogens (and even Entheogens, relative to their small sample size!). This aligns with what we would expect, as all three other categories, especially Cannabis, often fall under the broader range of 'psychedelic' substances.
+Our model was most likely to confuse a trip report about psychedelics with one about Cannabinoids or Empathogen/Entactogens (and even Entheogens, relative to their small sample size!). This aligns with what we would expect, as all three other categories, especially Cannabis, often fall under the broader range of 'psychedelic' substances. 
+
+To help our model find more complex patterns in the reports, we used Word2Vec, which is a method used to represent words in a way that computers can understand. Imagine that every word in a language is represented by a point in space. Words with similar meanings are closer together, and words with different meanings are farther apart. Word2Vec is a technique that helps to find these points for each word. In the following image, we clustered the words together based on their similar meanings (which Word2Vec derives from their context). We then chose the 5 closest (or most similarly meaningful) words from each cluster. Word2Vec learns from the patterns of how words appear with others and represents these patterns as numerical vectors. The similarity between these vectors then gives a measure of the similarity between the words themselves. It's like mapping the social circles of words based on who they "hang out" with!
 
 ![word vec clusters.png](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/word%20vec%20clusters.PNG)
+
+We clearly have some different clusters here, but it is not clear what they might have in common. That's because our data set is so complex, and Word2Vec is relatively simply, but it's a positive sign that the clusters do seem to be clear! That means even our simple model is picking up on patterns. To get a different understanding of the underlying patterns between the words in the report, we ran an LDA model and then visualized some word clouds:
 
 ![psy word clouds](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/psy%20word%20cloud.PNG)
 
 ![pharm word clouds](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/pharm%20word%20cloud.PNG)
 
+Here we see a clear difference between words in the reports labeled "Psychedelic" and those labeled "Pharmaceutical." It looks like both sets of clusters include the names of the drugs from the label category. That could be something we take into account with future data cleaning and engineering. Nevertheless, it's encouraging that our model was able to find relevant distinctions.
+
+Next, we moved on to trying to understand what features and elements our RFC model found important as it was making its predictions. We used LIME (Local Interpretable Model-agnostic Explanations), a tool that helps explain complex models like RFC. LIME is like a translator that breaks the decisions of the RFC model into simpler terms, showing the main reasons behind the decision. It's like asking a translator, "Why did the committee decide this?" and getting a plain-English answer that highlights the most important factors. With the above visualization, we can see that the word "feeling" was given positive weight when making a prediction, which means that, when that word appeared, it was likelier to be a "Psychedelic" than not.
+
 ![LIME features](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/LIME%20words.PNG)
 
+The "weights" in this plot represent the importance of specific words in determining the category "Psychedelic" for a given text sample. In the context of this plot, a weight is a numerical value assigned to each word that reflects how strongly it influences the classification.
+
+Imagine each word in the text as a vote towards the "Psychedelic" category. The weight tells you how powerful that vote is. A higher weight means the word has a more substantial influence in identifying the text as related to psychedelic experiences, while a lower weight means it has less influence.
+
+Next, we created an explainer using LIME, then chose an instance to explain, and then had the model explain. This visualization takes a single report and then highlights and weights the words within it to show which were most important for predicting whether the report was labeled a "Psychedelic."
+
 ![LIME analysis](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/LIME%20analysis.PNG)
+
+Unfortunately, we cannot derive much from the LIME explanation as it seems to indicate that our model gave a lot of weight to stop words in making its predictions. This will require more analysis in the future and perhaps some experiments with removing the stop words even if we lose semantic understanding for our GPT-2 Model later.
+
+Next, we visualized our positive predictions and false predictions. The three plots visualize model predictions related to psychedelics on a 2D plane. Plot 1 shows correct predictions; Plot 2 highlights incorrect ones with red 'x' markers, and Plot 3 contrasts correct (blue) and incorrect (red 'x') predictions. While the model cannot tell exactly what the patterns are that it is following, we can see that there are differences here that the model is picking up on.
 
 ![prediction patterns](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/true%20and%20false.PNG)
 

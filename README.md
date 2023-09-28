@@ -1,4 +1,4 @@
- # Psychedelic Trip-Report Generator
+ # Creating a Psychedelic Trip-Report Generator
 ### Analyzing psychedelic trip reports for predictive modeling and creating a trip report generator
 
 ![tree machine.png](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/trip%20generator%201.png)

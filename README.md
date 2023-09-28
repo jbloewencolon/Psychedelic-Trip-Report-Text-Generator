@@ -62,7 +62,7 @@ After running all three models, we decided to move forward with our best RFC mod
 
 ![rfcclassification.png](https://github.com/jbloewencolon/Psychedelic-Trip-Generator/blob/main/Images/RFC%20Classification%20Report.PNG)
 
-# Data Understanding
+# Evaluation
 
 Scores like that on their own don't really tell us much about the story. For example, of the 25% of the time the model guessed wrong, what was it most likely to choose?
 
